@@ -1,6 +1,6 @@
 # Wroclaw Weather Lambda
 
-Java AWS Lambda that returns the current temperature in Wroclaw, Poland using the Open-Meteo Forecast API.
+The AWS Lambda function written using Java 21 language returns the current temperature in city given by city name as a parameter using the Open-Meteo Forecast API.
 
 The Lambda returns structured JSON:
 
@@ -63,8 +63,3 @@ Or create a Lambda manually in the AWS Console:
 - Runtime: `Java 21`
 - Handler: `com.example.weather.lambda.WeatherLambdaHandler::handleRequest`
 - Artifact: `target/wroclaw-weather-lambda-1.0.0.jar`
-
-
-
-
-

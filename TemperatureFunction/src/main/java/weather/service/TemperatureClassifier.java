@@ -1,7 +1,7 @@
 package weather.service;
 
-public class TemperatureClassifier {
-    public TemperatureCategory classify(double temperatureCelsius) {
+public  class TemperatureClassifier {
+    public static TemperatureCategory classify(double temperatureCelsius) {
         if (temperatureCelsius < 0.0) {
             return TemperatureCategory.FREEZING;
         }

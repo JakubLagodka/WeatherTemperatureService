@@ -49,7 +49,7 @@ public class OpenMeteoWeatherClient implements WeatherClient {
             }
 
             return new CurrentWeather(
-                    openMeteoResponse.current().temperature2m(),
+                    openMeteoResponse.current().temperature2m,
                     openMeteoResponse.current().time()
             );
         } catch (IOException e) {
