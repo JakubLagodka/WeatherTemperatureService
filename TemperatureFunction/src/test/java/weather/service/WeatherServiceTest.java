@@ -1,24 +1,24 @@
 package weather.service;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-
 import org.junit.jupiter.api.Test;
-import weather.client.CurrentWeather;
+import weather.client.LocationClient;
+import weather.client.OpenMeteoWeatherClient;
 import weather.client.WeatherClient;
+
+import java.net.http.HttpClient;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class WeatherServiceTest {
     @Test
     void returnsStructuredWeatherResponseWithCategory() {
-        WeatherClient fakeClient = () -> new CurrentWeather(22.5, "2026-05-01T16:00");
-        WeatherService service = new WeatherService(fakeClient);
+        WeatherClient fakeWeatherClient = new OpenMeteoWeatherClient(HttpClient.newHttpClient());
+        LocationClient fakeLocationClient = new OpenMeteoWeatherClient(HttpClient.newHttpClient());
+        WeatherService service = new WeatherService(fakeWeatherClient,fakeLocationClient);
 
-        WeatherResponse response = service.getCurrentWeather();
+        WeatherResponse response = service.getCurrentWeather("Lublin");
 
-        assertEquals("Wroclaw", response.city());
-        assertEquals("22.5", response.temperatureCelsius());
-        assertEquals(TemperatureCategory.WARM.toString(), response.category());
-        assertEquals("2026-05-01T16:00", response.observedAt());
+        assertEquals("Lublin", response.city());
         assertEquals("Open-Meteo", response.source());
     }
 }

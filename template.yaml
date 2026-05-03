@@ -31,8 +31,6 @@ Resources:
           Properties:
             Path: /temperature
             Method: get
-            QueryStrings:
-              city: ""
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
