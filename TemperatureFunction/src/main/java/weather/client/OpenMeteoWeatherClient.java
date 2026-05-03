@@ -1,7 +1,8 @@
-package client;
+package weather.client;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -64,6 +65,7 @@ public class OpenMeteoWeatherClient implements WeatherClient {
     }
 
     @JsonIgnoreProperties(ignoreUnknown = true)
-    private record Current(String time, @com.fasterxml.jackson.annotation.JsonProperty("temperature_2m") double temperature2m) {
+    private record Current(String time,
+                           @com.fasterxml.jackson.annotation.JsonProperty("temperature_2m") double temperature2m) {
     }
 }

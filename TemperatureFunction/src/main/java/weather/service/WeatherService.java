@@ -1,7 +1,7 @@
-package service;
+package weather.service;
 
-import client.CurrentWeather;
-import client.WeatherClient;
+import weather.client.CurrentWeather;
+import weather.client.WeatherClient;
 
 public class WeatherService {
     private static final String CITY = "Wroclaw";

@@ -1,10 +1,11 @@
-package service;
+package weather.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import client.CurrentWeather;
-import client.WeatherClient;
+
 import org.junit.jupiter.api.Test;
+import weather.client.CurrentWeather;
+import weather.client.WeatherClient;
 
 class WeatherServiceTest {
     @Test

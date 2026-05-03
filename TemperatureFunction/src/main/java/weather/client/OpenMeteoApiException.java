@@ -1,4 +1,4 @@
-package client;
+package weather.client;
 
 public class OpenMeteoApiException extends RuntimeException {
     public OpenMeteoApiException(String message) {
