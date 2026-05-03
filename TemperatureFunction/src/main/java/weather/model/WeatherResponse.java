@@ -1,4 +1,4 @@
-package weather.service;
+package weather.model;
 
 public record WeatherResponse(
         String city,

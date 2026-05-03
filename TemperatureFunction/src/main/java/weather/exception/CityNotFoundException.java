@@ -1,4 +1,4 @@
-package weather.exceptions;
+package weather.exception;
 
 public class CityNotFoundException extends RuntimeException {
     public CityNotFoundException(String message) {

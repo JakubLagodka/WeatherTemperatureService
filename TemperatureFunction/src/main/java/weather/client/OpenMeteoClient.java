@@ -2,8 +2,10 @@ package weather.client;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import weather.exceptions.OpenMeteoApiException;
-import weather.exceptions.WeatherApiException;
+import weather.exception.OpenMeteoApiException;
+import weather.exception.WeatherApiException;
+import weather.model.CityLocation;
+import weather.model.CurrentWeather;
 
 import java.io.IOException;
 import java.net.URI;
@@ -15,7 +17,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Optional;
 
-public class OpenMeteoWeatherClient implements WeatherClient, LocationClient {
+public class OpenMeteoClient implements WeatherClient, LocationClient {
     private static final URI WROCLAW_CURRENT_WEATHER_URI = URI.create(
             "https://api.open-meteo.com/v1/forecast"
                     + "?latitude=51.1079"
@@ -28,11 +30,11 @@ public class OpenMeteoWeatherClient implements WeatherClient, LocationClient {
     private final HttpClient httpClient;
     private final ObjectMapper objectMapper;
 
-    public OpenMeteoWeatherClient(HttpClient httpClient) {
+    public OpenMeteoClient(HttpClient httpClient) {
         this(httpClient, new ObjectMapper());
     }
 
-    OpenMeteoWeatherClient(HttpClient httpClient, ObjectMapper objectMapper) {
+    OpenMeteoClient(HttpClient httpClient, ObjectMapper objectMapper) {
         this.httpClient = httpClient;
         this.objectMapper = objectMapper;
     }

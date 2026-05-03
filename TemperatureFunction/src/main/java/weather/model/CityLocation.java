@@ -1,4 +1,4 @@
-package weather.client;
+package weather.model;
 
 public record CityLocation(
         String name,

@@ -1,4 +1,4 @@
-package weather.service;
+package weather.model;
 
 public  class TemperatureClassifier {
     public static TemperatureCategory classify(double temperatureCelsius) {

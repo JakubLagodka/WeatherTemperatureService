@@ -1,4 +1,4 @@
-package weather.exceptions;
+package weather.exception;
 
 public class InvalidWeatherRequestException extends RuntimeException {
     public InvalidWeatherRequestException(String message) {

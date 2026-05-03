@@ -1,4 +1,4 @@
-package weather.service;
+package weather.model;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 

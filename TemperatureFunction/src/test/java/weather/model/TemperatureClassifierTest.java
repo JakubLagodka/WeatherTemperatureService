@@ -1,4 +1,4 @@
-package weather.service;
+package weather.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

@@ -1,11 +1,10 @@
 package weather.service;
 
-import weather.client.CityLocation;
-import weather.client.CurrentWeather;
+import weather.model.*;
 import weather.client.LocationClient;
 import weather.client.WeatherClient;
-import weather.exceptions.CityNotFoundException;
-import weather.exceptions.InvalidWeatherRequestException;
+import weather.exception.CityNotFoundException;
+import weather.exception.InvalidWeatherRequestException;
 
 public class WeatherService {
     private static final String SOURCE = "Open-Meteo";

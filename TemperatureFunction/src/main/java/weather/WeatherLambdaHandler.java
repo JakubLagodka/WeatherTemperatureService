@@ -7,7 +7,7 @@ import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import weather.client.LocationClient;
-import weather.client.OpenMeteoWeatherClient;
+import weather.client.OpenMeteoClient;
 import weather.client.WeatherClient;
 import weather.service.WeatherService;
 
@@ -19,8 +19,8 @@ import java.util.Map;
  * Handler for requests to Lambda function.
  */
 public class WeatherLambdaHandler implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
-    WeatherClient weatherClient = new OpenMeteoWeatherClient(HttpClient.newHttpClient());
-    LocationClient locationClient = new OpenMeteoWeatherClient(HttpClient.newHttpClient());
+    WeatherClient weatherClient = new OpenMeteoClient(HttpClient.newHttpClient());
+    LocationClient locationClient = new OpenMeteoClient(HttpClient.newHttpClient());
     WeatherService weatherService = new WeatherService(weatherClient,locationClient);
     ObjectMapper objectMapper = new ObjectMapper();
 
