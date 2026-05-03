@@ -20,13 +20,13 @@ The Lambda returns structured JSON:
 - `WeatherService` contains business use-case logic: fetch current weather and classify the temperature.
 - `TemperatureClassifier` isolates the temperature category rules, keeping them independent from AWS and HTTP concerns.
 - `WeatherClient` is an interface for external weather communication.
-- `LocationClient` is an interface for external weather communication.
+- `LocationClient` is an interface for external location communication.
 - `OpenMeteoWeatherClient` is the only class that knows the Open-Meteo endpoint and response format.
 
 
 ## Design Decisions
 
-I have firstly used Open-Meteo endpoint for Wrocław:
+Open-Meteo endpoints used for getting temperature in Wrocław:
 
 ```text
 https://api.open-meteo.com/v1/forecast?latitude=51.1079&longitude=17.0385&current=temperature_2m&timezone=Europe%2FWarsaw
@@ -39,7 +39,7 @@ https://geocoding-api.open-meteo.com/v1/search?name={city}&count=1&language=en&f
 https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}&current=temperature_2m&timezone={timezone}
 ```
 
-The Open-Meteo documentation states that `/v1/forecast` accepts `latitude`, `longitude`, and a `current` parameter for current weather variables, and returns JSON.
+The Open-Meteo documentation states that `/v1/forecast` accepts `latitude`, `longitude`, and a `current` parameter for current weather variables as well as geocoding-api, and returns JSON.
 
 ## Temperature Categories
 
@@ -82,3 +82,15 @@ Run tests:
 ```bash
 mvn test
 ```
+
+## Examples
+
+```bash
+http://localhost:3000/temperature?city=Bydgoszcz
+http://localhost:3000/temperature?city=Lublin
+http://localhost:3000/temperature?city=Wroclaw
+```
+
+## Design Reflection
+
+I can imagine that in the future another weather provider might be added and my current implementation support it by using interfaces Weather client and Location client that are implemented currently by the Open Meteo client and can be implemented by any other client in the future.
