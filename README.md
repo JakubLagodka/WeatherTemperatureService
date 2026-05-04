@@ -24,6 +24,7 @@ The Lambda returns structured JSON:
 - `OpenMeteoWeatherClient` is the only class that knows the Open-Meteo endpoint and response format.
 
 
+
 ## Design Decisions
 
 Open-Meteo endpoints used for getting temperature in Wrocław:
@@ -86,9 +87,9 @@ mvn test
 ## Examples
 
 ```bash
-http://localhost:3000/temperature?city=Bydgoszcz
-http://localhost:3000/temperature?city=Lublin
-http://localhost:3000/temperature?city=Wroclaw
+https://cmf2fewtijdoyetqutpzdbz6ui0hoqtx.lambda-url.eu-central-1.on.aws/temperature?city=Wroclaw
+https://cmf2fewtijdoyetqutpzdbz6ui0hoqtx.lambda-url.eu-central-1.on.aws/temperature?city=Bydgoszcz
+https://cmf2fewtijdoyetqutpzdbz6ui0hoqtx.lambda-url.eu-central-1.on.aws/temperature?city=Lublin
 ```
 
 ## Design Reflection
