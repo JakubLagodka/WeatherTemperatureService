@@ -94,4 +94,5 @@ https://cmf2fewtijdoyetqutpzdbz6ui0hoqtx.lambda-url.eu-central-1.on.aws/temperat
 
 ## Design Reflection
 
-I can imagine that in the future another weather provider might be added and my current implementation support it by using interfaces Weather client and Location client that are implemented currently by the Open Meteo client and can be implemented by any other client in the future.
+I can imagine that in the future another weather provider might be added and my current implementation support it by using interfaces Weather client and Location client that are implemented currently by the Open Meteo client and can be implemented by any other client as well.
+During this assignment I have learned a basic usage of AWS Lambda tool and manage to connect with external API and I'm happy to prepare working solution.
